@@ -5,8 +5,12 @@ import { View, Text, StyleSheet, Image } from "react-native";
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.welcomeText}>Welcome back,</Text>
-      <Text style={styles.username}>Melissa Otoo</Text>
+      <View style={styles.top}>
+        <Image style={styles.userimage} source={require("../Images/profile.png")} />
+        <Image style={styles.search} source={require("../Images/search.png")} />
+        <Text style={styles.welcomeText}>Welcome back,</Text>
+        <Text style={styles.username}>Melissa Otoo</Text>
+      </View>
       <View style={styles.card}>
         <Image source={require("../Images/Card.png")} />
       </View>
@@ -14,13 +18,19 @@ const HomeScreen = () => {
       <View style={styles.buttons}>
         <View style={styles.button}>
           <View style={styles.bx}>
-          <Image style={styles.image} source={require("../Images/send.png")} />
+            <Image
+              style={styles.image}
+              source={require("../Images/send.png")}
+            />
           </View>
           <Text style={styles.sent}>Sent</Text>
         </View>
 
         <View style={styles.button}>
-          <Image style={styles.image} source={require("../Images/recieve.png")} />
+          <Image
+            style={styles.image}
+            source={require("../Images/recieve.png")}
+          />
           <Text style={styles.receive}>Receive</Text>
         </View>
         <View style={styles.button}>
@@ -81,12 +91,24 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
-  welcomeText: {
-    fontSize: 24,
+  top: {
+    flex: 1,
+    flexDirection: "row",
   },
+  welcomeText: {
+    fontSize: 17,
+    marginLeft: 1,
+  },
+  search: {
+  left: 600,
+  },
+
   username: {
     fontSize: 20,
     fontWeight: "bold",
+    marginTop: 27,
+    right:110,
+  
   },
   card: {
     padding: 10,
@@ -95,9 +117,9 @@ const styles = StyleSheet.create({
   buttons: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between", 
+    justifyContent: "space-between",
   },
-  
+
   sent: {
     fontSize: 14,
   },
@@ -110,7 +132,7 @@ const styles = StyleSheet.create({
   topup: {
     fontSize: 14,
   },
-  
+
   transactions: {
     flex: 1,
   },
