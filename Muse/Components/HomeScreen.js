@@ -1,6 +1,6 @@
-// screens/HomeScreen.js
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+// src/screens/HomeScreen.js
+import React from "react";
+import { View, Text, StyleSheet, Image } from "react-native";
 
 const HomeScreen = () => {
   return (
@@ -8,25 +8,65 @@ const HomeScreen = () => {
       <Text style={styles.welcomeText}>Welcome back,</Text>
       <Text style={styles.username}>Melissa Otoo</Text>
       <View style={styles.card}>
-        <Text style={styles.cardNumber}>4562   1122   4595   7852</Text>
-        <View style={styles.cardDetails}>
-          <Text style={styles.expiryDate}>24/2000</Text>
-          <Text style={styles.cvv}>6986</Text>
+        <Image source={require("../Images/Card.png")} />
+      </View>
+
+      <View style={styles.buttons}>
+        <View style={styles.button}>
+          <View style={styles.bx}>
+          <Image style={styles.image} source={require("../Images/send.png")} />
+          </View>
+          <Text style={styles.sent}>Sent</Text>
+        </View>
+
+        <View style={styles.button}>
+          <Image style={styles.image} source={require("../Images/recieve.png")} />
+          <Text style={styles.receive}>Receive</Text>
+        </View>
+        <View style={styles.button}>
+          <Image style={styles.image} source={require("../Images/loan.png")} />
+          <Text style={styles.loan}>Loan</Text>
+        </View>
+        <View style={styles.button}>
+          <Image style={styles.image} source={require("../Images/topUp.png")} />
+          <Text style={styles.topup}>Topup</Text>
         </View>
       </View>
+
+      <View style={styles.transactionText}>
+        <Text style={styles.title}>Transactions</Text>
+        <Text style={styles.subtitle}>See All</Text>
+      </View>
+
       <View style={styles.transactions}>
         <View style={styles.transaction}>
+          <Image
+            source={require("../Images/moneyTransfer.png")}
+            style={{ width: 20, height: 20 }}
+          />
           <Text style={styles.transactionText}>Money Transfer</Text>
           <Text style={styles.amount}>$300</Text>
         </View>
         <View style={styles.transaction}>
+          <Image
+            source={require("../Images/grocery.png")}
+            style={{ width: 20, height: 20 }}
+          />
           <Text style={styles.transactionText}>Grocery Shopping</Text>
           <Text style={styles.amount}>-$88</Text>
         </View>
         <View style={styles.transaction}>
+          <Image
+            source={require("../Images/apple.png")}
+            style={{ width: 20, height: 20 }}
+          />
           <Text style={styles.transactionText}>Apple Store</Text>
           <Text style={styles.amount}>-$5.99</Text>
         </View>
+        <Image
+          source={require("../Images/spotify.png")}
+          style={{ width: 20, height: 20 }}
+        />
         <View style={styles.transaction}>
           <Text style={styles.transactionText}>Spotify</Text>
           <Text style={styles.amount}>-$12.99</Text>
@@ -46,44 +86,56 @@ const styles = StyleSheet.create({
   },
   username: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   card: {
-    backgroundColor: '#f8f9fa',
-    padding: 20,
-    borderRadius: 10,
+    padding: 10,
     marginBottom: 20,
   },
-  cardNumber: {
-    fontSize: 18,
-    marginBottom: 10,
+  buttons: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between", 
   },
-  cardDetails: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  
+  sent: {
+    fontSize: 14,
   },
-  expiryDate: {
-    fontSize: 16,
+  loan: {
+    fontSize: 14,
   },
-  cvv: {
-    fontSize: 16,
+  receive: {
+    fontSize: 14,
   },
+  topup: {
+    fontSize: 14,
+  },
+  
   transactions: {
     flex: 1,
   },
   transaction: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    borderBottomColor: "#e0e0e0",
   },
   transactionText: {
-    fontSize: 18,
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  title: {
+    fontSize: 24,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "blue",
   },
   amount: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 
