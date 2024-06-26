@@ -11,7 +11,7 @@ import SettingsScreen from "./SettingsScreen";
 const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
-  const { currentTheme } = useTheme(); // Get current theme
+  const { currentTheme } = useTheme(); 
 
   return (
     <Tab.Navigator

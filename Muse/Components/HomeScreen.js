@@ -1,20 +1,40 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
-import { useTheme } from '../theme/ThemeProvider';
+import { useTheme } from "../theme/ThemeProvider";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const HomeScreen = () => {
   const { currentTheme } = useTheme();
 
   return (
-    <ScrollView style={[styles.container, { backgroundColor: currentTheme.background }]}>
+    <ScrollView
+      style={[styles.container, { backgroundColor: currentTheme.background }]}
+    >
       <View style={styles.top}>
-        <Image style={styles.userimage} source={require("../Images/profile.png")} />
+        <Image
+          style={styles.userimage}
+          source={require("../Images/profile.png")}
+        />
         <View style={styles.welcomeContainer}>
-          <Text style={[styles.welcomeText, { color: currentTheme.text }]}>Welcome back,</Text>
-          <Text style={[styles.username, { color: currentTheme.text }]}>Melissa Otoo</Text>
+          <Text style={[styles.welcomeText, { color: currentTheme.text }]}>
+            Welcome back,
+          </Text>
+          <Text style={[styles.username, { color: currentTheme.text }]}>
+            Melissa Otoo
+          </Text>
         </View>
-        <View style={[styles.searchContainer, { backgroundColor: currentTheme.circle }]}>
-          <Image style={styles.search} source={require("../Images/search.png")} />
+        <View
+          style={[
+            styles.searchContainer,
+            { backgroundColor: currentTheme.circle },
+          ]}
+        >
+          <Icon
+            style={styles.search}
+            name="search"
+            size={24}
+            color={currentTheme.mode === "dark" ? "white" : "black"}
+          />
         </View>
       </View>
       <View style={styles.card}>
@@ -22,73 +42,165 @@ const HomeScreen = () => {
       </View>
       <View style={styles.buttons}>
         <View style={styles.button}>
-          <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
-            <Image style={styles.image} source={require("../Images/send.png")} />
+          <View
+            style={[styles.circle, { backgroundColor: currentTheme.circle }]}
+          >
+            <Icon
+              name="arrow-up"
+              size={24}
+              color={currentTheme.mode === "dark" ? "white" : "black"}
+            />
           </View>
           <Text style={[styles.sent, { color: currentTheme.text }]}>Sent</Text>
         </View>
         <View style={styles.button}>
-          <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
-            <Image style={styles.image} source={require("../Images/recieve.png")} />
+          <View
+            style={[styles.circle, { backgroundColor: currentTheme.circle }]}
+          >
+            <Icon
+              name="arrow-down"
+              size={24}
+              color={currentTheme.mode === "dark" ? "white" : "black"}
+            />
           </View>
-          <Text style={[styles.receive, { color: currentTheme.text }]}>Receive</Text>
+          <Text style={[styles.receive, { color: currentTheme.text }]}>
+            Receive
+          </Text>
         </View>
         <View style={styles.button}>
-          <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
-            <Image style={styles.image} source={require("../Images/loan.png")} />
+          <View
+            style={[styles.circle, { backgroundColor: currentTheme.circle }]}
+          >
+            <Icon
+              name="cash-outline"
+              size={24}
+              color={currentTheme.mode === "dark" ? "white" : "black"}
+            />
           </View>
           <Text style={[styles.loan, { color: currentTheme.text }]}>Loan</Text>
         </View>
         <View style={styles.button}>
-          <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
-            <Image style={styles.image} source={require("../Images/topUp.png")} />
+          <View
+            style={[styles.circle, { backgroundColor: currentTheme.circle }]}
+          >
+            <Icon
+              name="cloud-upload-outline"
+              size={24}
+              color={currentTheme.mode === "dark" ? "white" : "black"}
+            />
           </View>
-          <Text style={[styles.topup, { color: currentTheme.text }]}>Topup</Text>
+          <Text style={[styles.topup, { color: currentTheme.text }]}>
+            Topup
+          </Text>
         </View>
       </View>
       <View style={styles.Ttext}>
-        <Text style={[styles.Transact, { color: currentTheme.text }]}>Transaction</Text>
-        <Text style={[styles.sell, { color: 'blue' }]}>Sell All</Text>
+        <Text style={[styles.Transact, { color: currentTheme.text }]}>
+          Transaction
+        </Text>
+        <Text style={[styles.sell, { color: "blue" }]}>Sell All</Text>
       </View>
       <View style={styles.transactions}>
         <View style={styles.transaction}>
-          <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
-            <Image source={require("../Images/apple.png")} style={styles.transactionIcon} />
+          <View
+            style={[
+              styles.transactionIconContainer,
+              { backgroundColor: currentTheme.circle },
+            ]}
+          >
+            <Icon
+              name="logo-apple"
+              size={24}
+              color={currentTheme.mode === "dark" ? "white" : "black"}
+              style={styles.transactionIcon}
+            />
           </View>
           <View style={styles.transactionDetail}>
-            <Text style={[styles.transactionText, { color: currentTheme.text }]}>Apple Store</Text>
+            <Text
+              style={[styles.transactionText, { color: currentTheme.text }]}
+            >
+              Apple Store
+            </Text>
             <Text style={styles.categoryText}>Entertainment</Text>
           </View>
-          <Text style={[styles.amount, { color: currentTheme.text }]}>- $5.99</Text>
+          <Text style={[styles.amount, { color: currentTheme.text }]}>
+            - $5.99
+          </Text>
         </View>
         <View style={styles.transaction}>
-          <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
-            <Image source={require("../Images/spotify.png")} style={styles.transactionIcon} />
+          <View
+            style={[
+              styles.transactionIconContainer,
+              { backgroundColor: currentTheme.circle },
+            ]}
+          >
+            <Icon
+              name="spotify"
+              size={24}
+              color={currentTheme.mode === "dark" ? "white" : "black"}
+              style={styles.transactionIcon}
+            />
           </View>
           <View style={styles.transactionDetail}>
-            <Text style={[styles.transactionText, { color: currentTheme.text }]}>Spotify</Text>
+            <Text
+              style={[styles.transactionText, { color: currentTheme.text }]}
+            >
+              Spotify
+            </Text>
             <Text style={styles.categoryText}>Music</Text>
           </View>
-          <Text style={[styles.amount, { color: currentTheme.text }]}>- $12.99</Text>
+          <Text style={[styles.amount, { color: currentTheme.text }]}>
+            - $12.99
+          </Text>
         </View>
         <View style={styles.transaction}>
-          <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
-            <Image source={require("../Images/moneyTransfer.png")} style={styles.transactionIcon} />
+          <View
+            style={[
+              styles.transactionIconContainer,
+              { backgroundColor: currentTheme.circle },
+            ]}
+          >
+            <Icon
+              name="download-outline"
+              size={24}
+              color={currentTheme.mode === "dark" ? "white" : "black"}
+              style={styles.transactionIcon}
+            />
           </View>
           <View style={styles.transactionDetail}>
-            <Text style={[styles.transactionText, { color: currentTheme.text }]}>Money Transfer</Text>
+            <Text
+              style={[styles.transactionText, { color: currentTheme.text }]}
+            >
+              Money Transfer
+            </Text>
             <Text style={styles.categoryText}>Transactions</Text>
           </View>
-          <Text style={[styles.amount, { color: 'blue' }]}>$300</Text>
+          <Text style={[styles.amount, { color: "blue" }]}>$300</Text>
         </View>
         <View style={styles.transaction}>
-          <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
-            <Image source={require("../Images/grocery.png")} style={styles.transactionIcon} />
+          <View
+            style={[
+              styles.transactionIconContainer,
+              { backgroundColor: currentTheme.circle },
+            ]}
+          >
+            <Icon
+              name="cart-outline"
+              size={24}
+              color={currentTheme.mode === "dark" ? "white" : "black"}
+              style={styles.transactionIcon}
+            />
           </View>
           <View style={styles.transactionDetail}>
-            <Text style={[styles.transactionText, { color: currentTheme.text }]}>Grocery</Text>
+            <Text
+              style={[styles.transactionText, { color: currentTheme.text }]}
+            >
+              Grocery
+            </Text>
           </View>
-          <Text style={[styles.amount, { color: currentTheme.text }]}>- $88</Text>
+          <Text style={[styles.amount, { color: currentTheme.text }]}>
+            - $88
+          </Text>
         </View>
       </View>
     </ScrollView>

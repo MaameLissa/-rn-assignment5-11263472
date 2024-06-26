@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext } from 'react';
 import { StatusBar, View } from 'react-native';
 
 const lightTheme = {
-  background: '##f2f2f2',
+  background: '#ffffff',
   text: '#000000',
   circle: '#e0e0e0',
   tabBarBackground: '#ffffff',
