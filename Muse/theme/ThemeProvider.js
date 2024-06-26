@@ -1,15 +1,20 @@
-// src/theme/ThemeProvider.js
 import React, { createContext, useState, useContext } from 'react';
 import { StatusBar, View } from 'react-native';
 
 const lightTheme = {
   background: '#ffffff',
   text: '#000000',
+  circle: '#e0e0e0',
+  tabBarBackground: '#ffffff',
+  tabBarText: '#000000',
 };
 
 const darkTheme = {
-  background: '#000000',
+  background: '#191e39',
   text: '#ffffff',
+  circle: '#ffffff',
+  tabBarBackground: '#191e39',
+  tabBarText: '#ffffff',
 };
 
 const ThemeContext = createContext({

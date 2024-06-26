@@ -1,7 +1,7 @@
-// src/navigation/BottomTabs.js
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
+import { useTheme } from "../theme/ThemeProvider";
 
 import HomeScreen from "./HomeScreen";
 import MyCardsScreen from "./MyCardsScreen";
@@ -11,6 +11,8 @@ import SettingsScreen from "./SettingsScreen";
 const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
+  const { currentTheme } = useTheme(); // Get current theme
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -37,11 +39,17 @@ const BottomTabs = () => {
 
           return <Icon name={iconName} size={size} color={color} />;
         },
+        tabBarActiveTintColor: "#00008B",
+        tabBarInactiveTintColor: "gray",
+        tabBarStyle: [
+          {
+            display: "flex",
+            backgroundColor: currentTheme.tabBarBackground, // Apply theme background color
+          },
+          null,
+        ],
+        headerShown: false, // Remove the top bar
       })}
-      tabBarOptions={{
-        activeTintColor: "tomato",
-        inactiveTintColor: "gray",
-      }}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="My Cards" component={MyCardsScreen} />

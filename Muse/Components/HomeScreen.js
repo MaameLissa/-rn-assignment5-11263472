@@ -1,15 +1,22 @@
-// src/screens/HomeScreen.js
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import { useTheme } from '../theme/ThemeProvider';
 
 const HomeScreen = () => {
+  const { currentTheme } = useTheme();
+
   return (
-    <View style={styles.container}>
+    <ScrollView style={[styles.container, { backgroundColor: currentTheme.background }]}>
       <View style={styles.top}>
         <Image style={styles.userimage} source={require("../Images/profile.png")} />
-        <Image style={styles.search} source={require("../Images/search.png")} />
-        <Text style={styles.welcomeText}>Welcome back,</Text>
-        <Text style={styles.username}>Melissa Otoo</Text>
+        <View style={styles.welcomeContainer}>
+          <Text style={[styles.welcomeText, { color: currentTheme.text }]}>Welcome back,</Text>
+          <Text style={[styles.username, { color: currentTheme.text }]}>Melissa Otoo</Text>
+        </View>
+        
+        <View style={[styles.searchContainer, { backgroundColor: currentTheme.circle }]}>
+          <Image style={styles.search} source={require("../Images/search.png")} />
+        </View>
       </View>
       <View style={styles.card}>
         <Image source={require("../Images/Card.png")} />
@@ -17,143 +24,190 @@ const HomeScreen = () => {
 
       <View style={styles.buttons}>
         <View style={styles.button}>
-          <View style={styles.bx}>
-            <Image
-              style={styles.image}
-              source={require("../Images/send.png")}
-            />
+          <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
+            <Image style={styles.image} source={require("../Images/send.png")} />
           </View>
-          <Text style={styles.sent}>Sent</Text>
-        </View>
-
-        <View style={styles.button}>
-          <Image
-            style={styles.image}
-            source={require("../Images/recieve.png")}
-          />
-          <Text style={styles.receive}>Receive</Text>
+          <Text style={[styles.sent, { color: currentTheme.text }]}>Sent</Text>
         </View>
         <View style={styles.button}>
-          <Image style={styles.image} source={require("../Images/loan.png")} />
-          <Text style={styles.loan}>Loan</Text>
+          <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
+            <Image style={styles.image} source={require("../Images/recieve.png")} />
+          </View>
+          <Text style={[styles.receive, { color: currentTheme.text }]}>Receive</Text>
         </View>
         <View style={styles.button}>
-          <Image style={styles.image} source={require("../Images/topUp.png")} />
-          <Text style={styles.topup}>Topup</Text>
+          <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
+            <Image style={styles.image} source={require("../Images/loan.png")} />
+          </View>
+          <Text style={[styles.loan, { color: currentTheme.text }]}>Loan</Text>
+        </View>
+        <View style={styles.button}>
+          <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
+            <Image style={styles.image} source={require("../Images/topUp.png")} />
+          </View>
+          <Text style={[styles.topup, { color: currentTheme.text }]}>Topup</Text>
         </View>
       </View>
 
-      <View style={styles.transactionText}>
-        <Text style={styles.title}>Transactions</Text>
-        <Text style={styles.subtitle}>See All</Text>
+      <View style={styles.Ttext}>
+        <Text style={[styles.Transact, { color: currentTheme.text }]}>Transaction</Text>
+        <Text style={styles.sell}>Sell All</Text>
       </View>
 
       <View style={styles.transactions}>
         <View style={styles.transaction}>
-          <Image
-            source={require("../Images/moneyTransfer.png")}
-            style={{ width: 20, height: 20 }}
-          />
-          <Text style={styles.transactionText}>Money Transfer</Text>
-          <Text style={styles.amount}>$300</Text>
+          <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
+            <Image source={require("../Images/apple.png")} style={styles.transactionIcon} />
+          </View>
+          <View style={styles.transactionDetail}>
+            <Text style={[styles.transactionText, { color: currentTheme.text }]}>Apple Store</Text>
+            <Text style={styles.categoryText}>Entertainment</Text>
+          </View>
+          <Text style={[styles.amount, { color: currentTheme.text }]}>- $5.99</Text>
         </View>
         <View style={styles.transaction}>
-          <Image
-            source={require("../Images/grocery.png")}
-            style={{ width: 20, height: 20 }}
-          />
-          <Text style={styles.transactionText}>Grocery Shopping</Text>
-          <Text style={styles.amount}>-$88</Text>
+          <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
+            <Image source={require("../Images/spotify.png")} style={styles.transactionIcon} />
+          </View>
+          <View style={styles.transactionDetail}>
+            <Text style={[styles.transactionText, { color: currentTheme.text }]}>Spotify</Text>
+            <Text style={styles.categoryText}>Music</Text>
+          </View>
+          <Text style={[styles.amount, { color: currentTheme.text }]}>- $12.99</Text>
         </View>
         <View style={styles.transaction}>
-          <Image
-            source={require("../Images/apple.png")}
-            style={{ width: 20, height: 20 }}
-          />
-          <Text style={styles.transactionText}>Apple Store</Text>
-          <Text style={styles.amount}>-$5.99</Text>
+          <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
+            <Image source={require("../Images/moneyTransfer.png")} style={styles.transactionIcon} />
+          </View>
+          <View style={styles.transactionDetail}>
+            <Text style={[styles.transactionText, { color: currentTheme.text }]}>Money Transfer</Text>
+            <Text style={styles.categoryText}>Transactions</Text>
+          </View>
+          <Text style={[styles.amount, { color: "blue" }]}>$300</Text>
         </View>
-        <Image
-          source={require("../Images/spotify.png")}
-          style={{ width: 20, height: 20 }}
-        />
         <View style={styles.transaction}>
-          <Text style={styles.transactionText}>Spotify</Text>
-          <Text style={styles.amount}>-$12.99</Text>
+          <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
+            <Image source={require("../Images/grocery.png")} style={styles.transactionIcon} />
+          </View>
+          <View style={styles.transactionDetail}>
+            <Text style={[styles.transactionText, { color: currentTheme.text }]}>Grocery</Text>
+          </View>
+          <Text style={[styles.amount, { color: currentTheme.text }]}>- $88</Text>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 7,
   },
   top: {
-    flex: 1,
     flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  userimage: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+  },
+  welcomeContainer: {
+    marginLeft: 10,
+    flex: 1,
   },
   welcomeText: {
     fontSize: 17,
-    marginLeft: 1,
   },
-  search: {
-  left: 600,
-  },
-
   username: {
     fontSize: 20,
     fontWeight: "bold",
-    marginTop: 27,
-    right:110,
-  
+  },
+  searchContainer: {
+    width: 35,
+    height: 35,
+    borderRadius: 17.5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  search: {
+    width: 20,
+    height: 20,
   },
   card: {
-    padding: 10,
+    padding: 5,
     marginBottom: 20,
   },
   buttons: {
-    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
+    marginBottom: 20,
   },
-
+  button: {
+    alignItems: "center",
+  },
+  circle: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 5,
+  },
   sent: {
-    fontSize: 14,
-  },
-  loan: {
     fontSize: 14,
   },
   receive: {
     fontSize: 14,
   },
+  loan: {
+    fontSize: 14,
+  },
   topup: {
     fontSize: 14,
   },
-
+  Ttext: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  Transact: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  sell: {
+    color: "blue",
+  },
   transactions: {
     flex: 1,
   },
   transaction: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#e0e0e0",
+  },
+  transactionIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  transactionDetail: {
+    flex: 1,
+    marginLeft: 10,
   },
   transactionText: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  title: {
-    fontSize: 24,
-  },
-  subtitle: {
     fontSize: 16,
-    color: "blue",
+    fontWeight: "bold",
+  },
+  categoryText: {
+    fontSize: 14,
+    color: "grey",
   },
   amount: {
     fontSize: 18,
