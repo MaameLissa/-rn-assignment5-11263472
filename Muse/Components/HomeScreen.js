@@ -134,11 +134,9 @@ const HomeScreen = () => {
               { backgroundColor: currentTheme.circle },
             ]}
           >
-            <Icon
-              name="spotify"
-              size={24}
-              color={currentTheme.mode === "dark" ? "white" : "black"}
-              style={styles.transactionIcon}
+            <Image
+              style={styles.spotify}
+              source={require("../Images/spotify.png")}
             />
           </View>
           <View style={styles.transactionDetail}>
