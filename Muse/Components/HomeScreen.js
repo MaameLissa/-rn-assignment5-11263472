@@ -13,7 +13,6 @@ const HomeScreen = () => {
           <Text style={[styles.welcomeText, { color: currentTheme.text }]}>Welcome back,</Text>
           <Text style={[styles.username, { color: currentTheme.text }]}>Melissa Otoo</Text>
         </View>
-        
         <View style={[styles.searchContainer, { backgroundColor: currentTheme.circle }]}>
           <Image style={styles.search} source={require("../Images/search.png")} />
         </View>
@@ -21,7 +20,6 @@ const HomeScreen = () => {
       <View style={styles.card}>
         <Image source={require("../Images/Card.png")} />
       </View>
-
       <View style={styles.buttons}>
         <View style={styles.button}>
           <View style={[styles.circle, { backgroundColor: currentTheme.circle }]}>
@@ -48,12 +46,10 @@ const HomeScreen = () => {
           <Text style={[styles.topup, { color: currentTheme.text }]}>Topup</Text>
         </View>
       </View>
-
       <View style={styles.Ttext}>
         <Text style={[styles.Transact, { color: currentTheme.text }]}>Transaction</Text>
-        <Text style={styles.sell}>Sell All</Text>
+        <Text style={[styles.sell, { color: 'blue' }]}>Sell All</Text>
       </View>
-
       <View style={styles.transactions}>
         <View style={styles.transaction}>
           <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
@@ -83,7 +79,7 @@ const HomeScreen = () => {
             <Text style={[styles.transactionText, { color: currentTheme.text }]}>Money Transfer</Text>
             <Text style={styles.categoryText}>Transactions</Text>
           </View>
-          <Text style={[styles.amount, { color: "blue" }]}>$300</Text>
+          <Text style={[styles.amount, { color: 'blue' }]}>$300</Text>
         </View>
         <View style={styles.transaction}>
           <View style={[styles.transactionIconContainer, { backgroundColor: currentTheme.circle }]}>
@@ -128,7 +124,7 @@ const styles = StyleSheet.create({
   searchContainer: {
     width: 35,
     height: 35,
-    borderRadius: 17.5,
+    borderRadius: 30,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -151,7 +147,7 @@ const styles = StyleSheet.create({
   circle: {
     width: 50,
     height: 50,
-    borderRadius: 25,
+    borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 5,
@@ -193,7 +189,7 @@ const styles = StyleSheet.create({
   transactionIconContainer: {
     width: 40,
     height: 40,
-    borderRadius: 20,
+    borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
   },

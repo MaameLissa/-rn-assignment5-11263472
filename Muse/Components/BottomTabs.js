@@ -39,7 +39,7 @@ const BottomTabs = () => {
 
           return <Icon name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "#00008B",
+        tabBarActiveTintColor: "blue",
         tabBarInactiveTintColor: "gray",
         tabBarStyle: [
           {
@@ -48,7 +48,7 @@ const BottomTabs = () => {
           },
           null,
         ],
-        headerShown: false, // Remove the top bar
+        headerShown: false,
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />

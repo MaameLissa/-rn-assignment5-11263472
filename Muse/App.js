@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
-import BottomTabs from "./Components/BottomTabs";
-import { ThemeProvider } from "./theme/ThemeProvider";
+import BottomTabs from "./Components/BottomTabs"; // Ensure this path is correct
+import { ThemeProvider } from "./theme/ThemeProvider"; // Ensure this path is correct
 import { View, ActivityIndicator } from "react-native";
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
 
   if (!fontsLoaded) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" color="#0000ff" />
       </View>
     );
